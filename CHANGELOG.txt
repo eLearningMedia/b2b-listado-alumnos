@@ -8,4 +8,4 @@ Version 2.1
 
 	- Isolated Bootstrap
 	- More robust sorter
-	- Removed some Spring dependencies and updated to 2.1.5
+	- Removed some Spring dependencies and updated to 4.2.5
