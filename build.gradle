@@ -9,11 +9,11 @@ group "es.elearningmedia"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
-version "2.0-SNAPSHOT"
+version "2.1-RELEASE"
 
 ext {
 	learnVersion = "9.1.201404.160205"
-	springVersion = "4.2.1.RELEASE"
+	springVersion = "4.2.5.RELEASE"
 	deployServer = "localhost:9876"
 	deployInstance = "BBLEARN"
 }
@@ -39,14 +39,9 @@ dependencies {
 	providedCompile( "blackboard.platform:bb-cms-admin:${learnVersion}" ) { transitive = false }
   
   	//Spring
-	compile "org.springframework:spring-aop:${springVersion}",
-          "org.springframework:spring-beans:${springVersion}",
-          "org.springframework:spring-context:${springVersion}",
+	compile "org.springframework:spring-context:${springVersion}",
           "org.springframework:spring-core:${springVersion}",
-          "org.springframework:spring-expression:${springVersion}",
-          "org.springframework:spring-web:${springVersion}",
-          "org.springframework:spring-webmvc:${springVersion}",
-          "org.springframework:spring-context-support:${springVersion}"
+          "org.springframework:spring-webmvc:${springVersion}"
           
 	buildUtils "org.oscelot:b2deploy-task:0.1.0"
 }

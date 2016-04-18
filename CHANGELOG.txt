@@ -3,3 +3,9 @@ Version 2.0
 	- Migrated to MVC architecture with Spring
 	- Removed client side procesing in views, (no more js)
 	- No backward compatibility. BBLearn April2014 required.
+	
+Version 2.1
+
+	- Isolated Bootstrap
+	- More robust sorter
+	- Removed some Spring dependencies and updated to 2.1.5

@@ -69,9 +69,10 @@ public class BbServiceImpl implements BbService {
 			// Order students by lastname
 			Map<String, Student> sorter = new TreeMap<String, Student>();
 			for (Student element : resultado) {
-				sorter.put(
-						element.getLastname() + element.getFirstname() + element.getMiddlename() + element.getEmail(),
-						element);
+				String key = element.getLastname() + element.getFirstname() + element.getMiddlename() + element.getEmail();
+				// Cleaning the keys to avoid ordering artifacts
+				key = removeEspecialChars(key.toLowerCase());
+				sorter.put(key , element);
 			}
 
 			resultado = new ArrayList<Student>(sorter.values());
@@ -110,6 +111,17 @@ public class BbServiceImpl implements BbService {
 		resultado.setStrEmail(resourceBundle.getString("b2.strEmail"));
 
 		return resultado;
+	}
+	
+	public static String removeEspecialChars(String input) {
+	    // Special characters to replace.
+	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+	    String output = input;
+	    for (int i=0; i<original.length(); i++) {
+	        output = output.replace(original.charAt(i), ascii.charAt(i));
+	    }
+	    return output;
 	}
 
 }
