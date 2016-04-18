@@ -22,12 +22,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 <!-- compiled and minified jQuery -->
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<!-- Bootstrap compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<!-- Bootstrap Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<!-- Bootstrap isolated CSS -->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bootstrap-iso.css" />
+	
 <!-- Bootstrap compiled and minified JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -43,8 +41,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 				${course}<br>
 				${studentscount}<br>
 		</bbNG:pageTitleBar>
-		<div class="row">
-			<div id="link-license-roster" class="col-xs-3 col-xs-offset-9">
+		<div class="bootstrap-iso row">
+			<div id="link-license-roster" class="bootstrap-iso col-xs-3 col-xs-offset-9">
 				<a href="https://github.com/eLearningMedia/b2b-listado-alumnos"
 					target="_blank">${license}</a>
 			</div>
@@ -53,9 +51,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 
 	<c:forEach items="${students}" var="student" varStatus="loopStatus">
 		<c:if test="${loopStatus.index % 2 == 0}">
-			<div class='row roster-data'>
+			<div class='bootstrap-iso row roster-data'>
 		</c:if>
-		<div class='col-xs-2'>
+		<div class='bootstrap-iso col-xs-2'>
 			<c:choose>
 				<c:when test="${student.photo.length() == 0}">
 					<img
@@ -67,8 +65,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 				</c:otherwise>
 			</c:choose>
 		</div>
-		<div class='col-xs-4'>
-			<div class='roster-name row'>
+		<div class='bootstrap-iso col-xs-4'>
+			<div class='bootstrap-iso roster-name row'>
 				<c:choose>
 					<c:when test="${student.middlename.length() == 0}">
 					       ${name} ${student.firstname} &nbsp;${student.lastname}
@@ -78,7 +76,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 					    </c:otherwise>
 				</c:choose>
 			</div>
-			<div class='roster-email row'>
+			<div class='bootstrap-iso roster-email row'>
 				${email}<a href="mailto:${student.email }">${student.email }</a>
 			</div>
 		</div>
